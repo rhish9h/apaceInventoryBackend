@@ -12,6 +12,11 @@
     // $query = "select * from `order details` WHERE 1";
 
     $userData = mysqli_query($conn, $query);
+    if(!$userData) {
+        echo $query;
+        var_dump($_REQUEST);
+        die (mysqli_error($conn));
+    }
     $response = array();
 
     while($row = mysqli_fetch_assoc($userData)){

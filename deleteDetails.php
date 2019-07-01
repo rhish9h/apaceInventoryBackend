@@ -18,7 +18,9 @@
         $userData = mysqli_query($conn, $query);
         
         if(!$userData) {
-            die (mysqli_errors);
+            echo $query;
+            var_dump($_REQUEST);
+            die (mysqli_error($conn));
         }
     }
     
