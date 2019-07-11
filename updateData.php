@@ -13,7 +13,9 @@
         $tableName = $_GET['tableName'] ?? '';
         $fieldValues = json_decode($_GET['fieldValues']) ?? array('');  //decode the array sent - contains fields and values
         $query_fieldVal = '';
-
+        if ($delField != 'serial number') {
+            $sno = "'".$sno."'";
+        }
         // create a set of fields for query
 
         foreach ($fieldValues as $field) {
@@ -32,5 +34,7 @@
             var_dump($_REQUEST);
             die (mysqli_error($conn));
         }
+
+        var_dump($_GET);
     }
     
