@@ -1,5 +1,4 @@
 <?php
-    // get unique value
     // send table name, columns (array), indexColumn, value
     header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Credentials: true ");
