@@ -1,5 +1,7 @@
 <?php
-    //push data into the orders tables
+    // push data into the orders tables
+    // send table name and field values
+    // field values = array of arrays [[], []] => [key, value] => field, value
     header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Credentials: true ");
     header("Access-Control-Allow-Methods: OPTIONS, GET, POST");
