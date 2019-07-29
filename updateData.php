@@ -20,7 +20,7 @@
         // create a set of fields for query
 
         foreach ($fieldValues as $field) {
-            $query_fieldVal .= '`'.$field[0]."` = '".$field[1]."', ";  // add backticks and comma+space
+            $query_fieldVal .= '`'.$field[0]."` = '".addslashes($field[1])."', ";  // add backticks and comma+space
         }
         $query_fieldVal = rtrim($query_fieldVal, ', '); //trim off the last comma+space
 

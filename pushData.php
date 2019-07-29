@@ -18,7 +18,7 @@
         $query_values = '(';
         foreach ($fieldValues as $field) {
             $query_fields .= '`'.$field[0].'`, ';  // add backticks and comma+space
-            $query_values .= "'".$field[1]."', ";
+            $query_values .= "'".addslashes($field[1])."', ";
         }
         $query_fields = rtrim($query_fields, ', '); //trim off the last comma+space
         $query_fields .= ')';
