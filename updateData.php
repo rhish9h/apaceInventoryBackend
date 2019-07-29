@@ -12,6 +12,7 @@
         $delField = $_GET['delField'] ?? 'serial number';
         $tableName = $_GET['tableName'] ?? '';
         $fieldValues = json_decode($_GET['fieldValues']) ?? array('');  //decode the array sent - contains fields and values
+        // [[key, value],...]
         $query_fieldVal = '';
         if ($delField != 'serial number') {
             $sno = "'".$sno."'";
