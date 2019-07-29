@@ -34,6 +34,18 @@
             die (mysqli_error($conn));
         }
 
+        // add log for backup
+        $slashedQuery = addslashes($delQuery);
+        $log = "INSERT INTO `logs` (`table name`, `query type`, `query`) VALUES ('$tableName', 'delete', '" . $slashedQuery . "');";
+
+        $addedLog = mysqli_query($conn, $log);
+
+        if(!$addedLog) {
+            echo $addedLog;
+            var_dump($_REQUEST);
+            die (mysqli_error($conn));
+        }
+
         // add all rows that are passed
         foreach ($fieldValues as $fieldVal) {
             // create a set of fields for query
@@ -56,6 +68,18 @@
             
             if(!$userData) {
                 echo $query;
+                var_dump($_REQUEST);
+                die (mysqli_error($conn));
+            }
+
+            // add log for backup
+            $slashedQuery = addslashes($query);
+            $log = "INSERT INTO `logs` (`table name`, `query type`, `query`) VALUES ('$tableName', 'insert', '" . $slashedQuery . "');";
+
+            $addedLog = mysqli_query($conn, $log);
+
+            if(!$addedLog) {
+                echo $addedLog;
                 var_dump($_REQUEST);
                 die (mysqli_error($conn));
             }

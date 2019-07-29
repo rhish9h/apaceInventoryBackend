@@ -36,6 +36,18 @@
             die (mysqli_error($conn));
         }
 
-        var_dump($_GET);
+        // var_dump($_GET);
+
+        // add log for backup
+        $slashedQuery = addslashes($query);
+        $log = "INSERT INTO `logs` (`table name`, `query type`, `query`) VALUES ('$tableName', 'update', '" . $slashedQuery . "');";
+
+        $addedLog = mysqli_query($conn, $log);
+
+        if(!$addedLog) {
+            echo $addedLog;
+            var_dump($_REQUEST);
+            die (mysqli_error($conn));
+        }
     }
     
