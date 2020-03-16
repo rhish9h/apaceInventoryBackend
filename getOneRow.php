@@ -26,7 +26,7 @@
         }
         $queryCols = rtrim($queryCols, ', ');
 
-        $query = 'SELECT '.$queryCols.' FROM `'.$tableName.'` WHERE `'.$indexColumn."` = '".$value."';";
+        $query = 'SELECT '.$queryCols.' FROM `'.$tableName.'` WHERE `'.$indexColumn."` = '".$value."' ORDER BY `serial number`;";
 
         //SELECT `stock`, `purchase price`, `stock value`, `active` FROM `raw material stock` WHERE `material id` = 'F1';
 
