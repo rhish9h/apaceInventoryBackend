@@ -25,7 +25,10 @@
 
         // delete all values of particular suborder id
         $suborder = $fieldValues[0][0][1];
-        $delQuery = "DELETE FROM `order details` WHERE `suborder id` = '$suborder'";
+        if ($tableName === 'order details') // for order details
+            $delQuery = "DELETE FROM `order details` WHERE `suborder id` = '$suborder'";
+        else // for work station
+            $delQuery = "DELETE FROM `workstation operation` WHERE `suborder id` = '$suborder'";
         
         $delData = mysqli_query($conn, $delQuery);
         if (!$delData) {
