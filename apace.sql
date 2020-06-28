@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2020 at 06:39 PM
+-- Generation Time: Jun 28, 2020 at 02:30 PM
 -- Server version: 10.1.40-MariaDB
 -- PHP Version: 7.3.5
 
@@ -996,8 +996,8 @@ CREATE TABLE `sub/order master` (
   `pattern` varchar(255) NOT NULL,
   `order code` varchar(255) NOT NULL,
   `total` int(11) NOT NULL,
-  `quantity completed` int(11) NOT NULL,
-  `quantity reworked` int(11) NOT NULL,
+  `quantity completed` int(11) NOT NULL DEFAULT '0',
+  `quantity reworked` int(11) NOT NULL DEFAULT '0',
   `product related instructions` text NOT NULL,
   `product notes` text NOT NULL,
   `printing details` text NOT NULL,
